@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+
+// Function to calculate Simple Interest
+float calculateSimpleInterest(float principal, float rate, float time) {
+    return (principal * rate * time) / 100;
+}
+
+// Function to calculate Compound Interest
+float calculateCompoundInterest(float principal, float rate, float time) {
+    return principal * (pow((1 + rate / 100), time) - 1);
+}
+
+int main() {
+    float principal, rate, time, simpleInterest, compoundInterest;
+
+    // Taking user input
+    printf("Enter Principal Amount: ");
+    scanf("%f", &principal);
+
+    printf("Enter Time (in years): ");
+    scanf("%f", &time);
+
+    printf("Enter Rate of Interest (in percentage): ");
+    scanf("%f", &rate);
+
+    // Calculate Simple Interest
+    simpleInterest = calculateSimpleInterest(principal, rate, time);
+    printf("Simple Interest: %.2f\n", simpleInterest);
+
+    // Calculate Compound Interest
+    compoundInterest = calculateCompoundInterest(principal, rate, time);
+    printf("Compound Interest: %.2f\n", compoundInterest);
+
+    return 0;
+}
