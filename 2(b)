@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    float phy, che, mat, bio, cs, totalMarks, percentage;
+    printf("Enter marks for Physics: ");
+    scanf("%f", &phy);
+    printf("Enter marks for Chemistry: ");
+    scanf("%f", &che);
+    printf("Enter marks for Mathematics: ");
+    scanf("%f", &mat);
+    printf("Enter marks for Biology: ");
+    scanf("%f", &bio);
+    printf("Enter marks for Computer Science: ");
+    scanf("%f", &cs);
+    totalMarks = phy + che + mat + bio + cs;
+    percentage = (totalMarks / 500) * 100;
+    printf("Total Marks: %.2f\n", totalMarks);
+    printf("Percentage: %.2f%%\n", percentage);
+    if (percentage >= 90) {
+        printf("Grade: A\n");
+    } else if (percentage >= 80) {
+        printf("Grade: B\n");
+    } else if (percentage >= 70) {
+        printf("Grade: C\n");
+    } else if (percentage >= 60) {
+        printf("Grade: D\n");
+    } else if (percentage >= 50) {
+        printf("Grade: E\n");
+    } else {
+        printf("Fail\n");
+    }
+
+    return 0;
+}
