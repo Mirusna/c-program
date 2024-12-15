@@ -1,0 +1,42 @@
+#include <stdio.h>
+void leftrotate (int arr[],int n,(int k))
+{
+int k;
+k=k%n;
+int temp[k];
+for(int i=0;i<k;i++)
+{
+temp[i]=arr[i];
+}
+for(int i=k;i<n;i++)
+{
+arr[i-k]=arr[i];
+}
+}
+void printarray(int arr[],int n)
+{
+for(int i=0;i<n;i++)
+{
+printf("%d",arr[i]);
+}
+printf("\n");
+}
+int main()
+{
+int n,k;
+printf("Enter the size of the array:");
+scanf("%d",&n);
+printf("Enter the number of times to rotate");
+scanf("%d",&k);
+int arr[n];
+printf("Enter the elements of the array");
+for(int i=0;i<n;i++)
+{
+scanf("%d",&arr[i]);
+}
+leftrotate (arr,n,k);
+printf("Rotated array");
+printarray(arr,n);
+    return 0;
+}
+    
