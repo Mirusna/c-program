@@ -1,0 +1,32 @@
+#include <stdio.h>
+#define MAX 256  
+char findMinOccurringChar(char str[]) {
+    int freq[MAX] = {0};  
+    for (int i = 0; str[i] != '\0'; i++) {
+        freq[(int)str[i]]++;
+    }
+    int minFreq = 1000000;  
+    char minChar = '\0';
+    for (int i = 0; i < MAX; i++) {
+        if (freq[i] > 0 && freq[i] < minFreq) {
+            minFreq = freq[i];
+            minChar = (char)i;
+        }
+    }
+    return minChar;
+}
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    if (str[strlen(str) - 1] == '\n') {
+        str[strlen(str) - 1] = '\0';
+    }
+    char minChar = findMinOccurringChar(str);
+    if (minChar != '\0') {
+        printf("The minimum occurring character is: %c\n", minChar);
+    } else {
+        printf("No characters found in the string.\n");
+    }
+    return 0;
+}
