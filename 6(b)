@@ -1,0 +1,17 @@
+#include <stdio.h>
+void find_max(int arr[], int size, int *max) {
+    *max = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > *max) {
+            *max = arr[i];
+        }
+    }
+}
+int main() {
+    int arr[] = {3, 5, 7, 2, 8, 6, 4};
+    int size = sizeof(arr) / sizeof(arr[0]); 
+    int max_value;  
+    find_max(arr, size, &max_value);
+    printf("The maximum element in the array is: %d\n", max_value);
+    return 0;
+}
