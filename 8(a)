@@ -1,0 +1,40 @@
+#include <stdio.h>
+struct Address {
+    char street[100];
+    char city[50];
+    int pin_code;
+};
+struct Employee {
+    char name[50];
+    int id;
+    struct Address address;  
+};
+void input_employee_details(struct Employee *emp) {
+    printf("Enter employee details:\n");
+    printf("Name: ");
+    scanf("%s", emp->name);
+    printf("ID: ");
+    scanf("%d", &emp->id);
+    printf("Enter address details:\n");
+    printf("Street: ");
+    scanf(" %[^\n]%*c", emp->address.street); 
+    printf("City: ");
+    scanf("%s", emp->address.city);
+    printf("Pin Code: ");
+    scanf("%d", &emp->address.pin_code);
+}
+void display_employee_details(struct Employee emp) {
+    printf("\nEmployee Details:\n");
+    printf("Name: %s\n", emp.name);
+    printf("ID: %d\n", emp.id);
+    printf("Address: \n");
+    printf("Street: %s\n", emp.address.street);
+    printf("City: %s\n", emp.address.city);
+    printf("Pin Code: %d\n", emp.address.pin_code);
+}
+int main() {
+    struct Employee emp; 
+    input_employee_details(&emp);
+    display_employee_details(emp);
+    return 0;
+}
