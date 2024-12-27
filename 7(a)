@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+    int value = 10;        
+    int *ptr1;             
+    int **ptr2;            
+    ptr1 = &value;
+    ptr2 = &ptr1;
+    printf("Value of 'value' using ptr1: %d\n", *ptr1);         
+    printf("Value of 'value' using ptr2: %d\n", **ptr2);       
+    printf("Address of 'value': %p\n", (void*)&value);
+    printf("Address stored in ptr1: %p\n", (void*)ptr1);       
+    printf("Address stored in ptr2: %p\n", (void*)ptr2);       
+    return 0;
+}
