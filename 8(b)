@@ -1,0 +1,37 @@
+#include <stdio.h>
+struct Vehicle {
+    char register_number[20];
+    char owner_name[50];
+    char model[50];
+    float price;
+    int manufacture_year;
+};
+int main() {
+    struct Vehicle vehicles[10];
+    printf("Enter details of 10 vehicles:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("\nEnter details for vehicle %d:\n", i + 1);
+        printf("Register Number: ");
+        scanf("%s", vehicles[i].register_number);
+        printf("Owner Name: ");
+        scanf(" %[^\n]", vehicles[i].owner_name); 
+        printf("Model: ");
+        scanf(" %[^\n]", vehicles[i].model); 
+        printf("Price: ");
+        scanf("%f", &vehicles[i].price);
+        printf("Manufacture Year: ");
+        scanf("%d", &vehicles[i].manufacture_year);
+    }
+    printf("\nVehicles manufactured after the year 2015:\n");
+    for (int i = 0; i < 10; i++) {
+        if (vehicles[i].manufacture_year > 2015) {
+            printf("\nVehicle %d Details:\n", i + 1);
+            printf("Register Number: %s\n", vehicles[i].register_number);
+            printf("Owner Name: %s\n", vehicles[i].owner_name);
+            printf("Model: %s\n", vehicles[i].model);
+            printf("Price: %.2f\n", vehicles[i].price);
+            printf("Manufacture Year: %d\n", vehicles[i].manufacture_year);
+        }
+    }
+    return 0;
+}
