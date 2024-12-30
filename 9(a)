@@ -1,0 +1,33 @@
+#include <stdio.h>
+typedef enum {
+    RED,    
+    YELLOW, 
+    GREEN   
+} TrafficLight;
+void traffic_light_action(TrafficLight light) {
+    switch (light) {
+        case RED:
+            printf("STOP\n");
+            break;
+        case YELLOW:
+            printf("SLOW DOWN\n");
+            break;
+        case GREEN:
+            printf("GO\n");
+            break;
+        default:
+            printf("Invalid traffic light color\n");
+            break;
+    }
+}
+int main() {
+    TrafficLight light = RED;
+    traffic_light_action(light); 
+
+    light = YELLOW;
+    traffic_light_action(light); 
+
+    light = GREEN;
+    traffic_light_action(light);  
+    return 0;
+}
